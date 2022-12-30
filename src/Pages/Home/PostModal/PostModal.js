@@ -32,13 +32,16 @@ const PostModal = () => {
             image: imageData.data.url,
           };
 
-          fetch("http://localhost:5000/post", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(createPost),
-          })
+          fetch(
+            "https://social-media-application-server-three.vercel.app/post",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(createPost),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log(data);

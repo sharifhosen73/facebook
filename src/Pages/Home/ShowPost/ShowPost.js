@@ -4,7 +4,7 @@ import ShowPostItem from "./ShowPostItem";
 const ShowPost = () => {
   const [post, setPost] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/post")
+    fetch("https://social-media-application-server-three.vercel.app/post")
       .then((res) => res.json())
       .then((data) => setPost(data));
   }, []);

@@ -26,7 +26,9 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/post/${params.id}`),
+          fetch(
+            `https://social-media-application-server-three.vercel.app/post/${params.id}`
+          ),
       },
       {
         path: "/messenger",

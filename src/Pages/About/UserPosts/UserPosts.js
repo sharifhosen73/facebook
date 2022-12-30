@@ -8,7 +8,9 @@ const UserPosts = () => {
   const [userPosts, setUserPosts] = useState([]);
   console.log("Hello Man", user.user?.email);
   useEffect(() => {
-    fetch(`http://localhost:5000/user-post?email=${user.user?.email}`)
+    fetch(
+      `https://social-media-application-server-three.vercel.app/user-post?email=${user.user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setUserPosts(data));
   }, [user.user?.email]);

@@ -21,13 +21,16 @@ const UserIntroModal = () => {
       live,
     };
     console.log(information);
-    fetch("http://localhost:5000/user-personal", {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(information),
-    })
+    fetch(
+      "https://social-media-application-server-three.vercel.app/user-personal",
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(information),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

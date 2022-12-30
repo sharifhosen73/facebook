@@ -21,14 +21,18 @@ const ShowPostItem = ({ post }) => {
 
   // Comment Show
   useEffect(() => {
-    fetch(`http://localhost:5000/comment/${_id}`)
+    fetch(
+      `https://social-media-application-server-three.vercel.app/comment/${_id}`
+    )
       .then((res) => res.json())
       .then((data) => setPostComment(data));
   }, [_id]);
 
   //Like Show
   useEffect(() => {
-    fetch(`http://localhost:5000/like/${_id}`)
+    fetch(
+      `https://social-media-application-server-three.vercel.app/like/${_id}`
+    )
       .then((res) => res.json())
       .then((data) => setPostLike(data));
   }, [_id]);
@@ -44,7 +48,7 @@ const ShowPostItem = ({ post }) => {
     };
     console.log(like);
     if (like === true) {
-      fetch("http://localhost:5000/like", {
+      fetch("https://social-media-application-server-three.vercel.app/like", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -66,7 +70,7 @@ const ShowPostItem = ({ post }) => {
       comment: data.comment,
     };
     console.log(comment);
-    fetch("http://localhost:5000/comment", {
+    fetch("https://social-media-application-server-three.vercel.app/comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -66,7 +66,7 @@ const SignUp = () => {
 
   const saveUser = (name, email, photoURL) => {
     const user = { name, email, photoURL };
-    fetch("http://localhost:5000/users", {
+    fetch("https://social-media-application-server-three.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

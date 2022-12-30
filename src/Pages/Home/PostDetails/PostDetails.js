@@ -19,7 +19,9 @@ const PostDetails = () => {
   const [postComment, setPostComment] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/comment/${_id}`)
+    fetch(
+      `https://social-media-application-server-three.vercel.app/comment/${_id}`
+    )
       .then((res) => res.json())
       .then((data) => setPostComment(data));
   }, [_id]);
@@ -32,7 +34,7 @@ const PostDetails = () => {
       email: user?.email,
       like,
     };
-    fetch("http://localhost:5000/like", {
+    fetch("https://social-media-application-server-three.vercel.app/like", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +55,7 @@ const PostDetails = () => {
       comment: data.comment,
     };
     console.log(comment);
-    fetch("http://localhost:5000/comment", {
+    fetch("https://social-media-application-server-three.vercel.app/comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

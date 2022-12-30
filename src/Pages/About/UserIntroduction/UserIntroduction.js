@@ -7,7 +7,9 @@ const UserIntroduction = () => {
   const [information, setInformation] = useState({});
   console.log(information);
   useEffect(() => {
-    fetch(`http://localhost:5000/user-personal?email=${user?.email}`)
+    fetch(
+      `https://social-media-application-server-three.vercel.app/user-personal?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setInformation(data));
   }, [user?.email]);
